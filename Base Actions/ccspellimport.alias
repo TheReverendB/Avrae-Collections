@@ -11,6 +11,8 @@ aConvert = {
 }
 
 def automate(ability, ccname):
+        if ':' not in ccname:
+	        err(f"Your counter {ccname} doesn't have the proper format to import. `<ability>: <spell>` is the format.  Like `Shadow Touched (Wisdom):  False Life`")
 	spell = ccname[ccname.index(":")+2:]
 
 	automation = {
