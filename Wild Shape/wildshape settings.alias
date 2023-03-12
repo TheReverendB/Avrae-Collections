@@ -43,7 +43,7 @@ SAVE_NAMES = (
 
 SetOptions = {
 "RestrictKnown": "False",
-"Note": "None.",
+"Note": "None",
 "HPBonus": "0",
 "ACBonus": "0",
 "AltAC": "False",
@@ -95,7 +95,7 @@ for ability in a.get("Save"):
 	if ability not in SAVE_NAMES:
 		err(f"""{skill} is not a valid save name. Use `{ctx.prefix}help {ctx.alias} settings` to see a full list of save names.""")		
 
-for option, default in SetOptions:
+for option, default in SetOptions.items():
 	if a.last(option) != None:
 		if option in ["HPBonus", "ACBonus", "AttackBonus"]:
 			settings[option] = a.last(option, type_ = int)
